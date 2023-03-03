@@ -119,6 +119,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+RAD_PULT_BANKA/
 
 # Spyder project settings
 .spyderproject

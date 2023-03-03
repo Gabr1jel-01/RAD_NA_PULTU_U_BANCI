@@ -80,7 +80,3 @@ def user_input():
         exit()
         
 
-
-
-
-#napisano bzvz da mogu napraviti pull

@@ -16,6 +16,7 @@ print()
 
 string_of_numbers = "0123456789"
 shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers)))
+global a 
 a = 0
 
 if a == 0:
@@ -27,6 +28,7 @@ if a == 0:
         new_bank_account_IBAN = "HR" + shuffle_string
         global name_and_IBAN
         name_and_IBAN = print(new_bank_account + "\n" + new_bank_account_IBAN)
+        global a 
         a = a + 1
         return a
 else:

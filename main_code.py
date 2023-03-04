@@ -14,7 +14,8 @@ print()
 print("Dobrodosli!")
 print()
 
-list_of_numbers = [1,2,3,4,5,6,7,8,9,0]
+string_of_numbers = "0123456789"
+shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers)))
 a = 0
 
 if a == 0:
@@ -23,7 +24,7 @@ if a == 0:
         global new_bank_account 
         new_bank_account = input("Upisite naziv firme: ")
         global new_bank_account_IBAN 
-        new_bank_account_IBAN = "HR" + random.shuffle(list_of_numbers)
+        new_bank_account_IBAN = "HR" + shuffle_string
         global name_and_IBAN
         name_and_IBAN = print(new_bank_account + "\n" + new_bank_account_IBAN)
         a = a + 1
@@ -34,6 +35,7 @@ else:
 
 def show_bank_account_balance():
     global account_balance 
+    account_balance = 0
     account_balance = 0 - money_pay_up() + money_pay_down()
     return account_balance
 
@@ -58,7 +60,7 @@ def exit():
 
 
 def user_input():
-    print(""" 2. Otvaranje racuna tvrtke\n
+    print(""" \t\t2. Otvaranje racuna tvrtke\n
               3. Prikaz stanja racuna\n
               4. Prikaz prometa po racunu\n
               5. Polog novca na racun\n
@@ -80,3 +82,4 @@ def user_input():
         exit()
         
 
+user_input()

@@ -24,10 +24,11 @@ if a == 0:
     def open_company_account():
         global new_bank_account 
         new_bank_account = input("Upisite naziv firme: ")
+        print()
         global new_bank_account_IBAN 
-        new_bank_account_IBAN = f"Naziv firme te IBAN:{new_bank_account}\n" + "HR" + shuffle_string
+        new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
         global name_and_IBAN
-        name_and_IBAN = print(new_bank_account + "\n" + new_bank_account_IBAN)
+        name_and_IBAN = print(new_bank_account_IBAN)
         global a 
         a = a + 1
         return a

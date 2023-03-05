@@ -31,7 +31,7 @@ while True:
             new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
             global name_and_IBAN
             name_and_IBAN = print(new_bank_account_IBAN)
-            #global a 
+            global a 
             a = a + 1
             return a
     if a == 0:

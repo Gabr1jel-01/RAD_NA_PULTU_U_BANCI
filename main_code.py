@@ -16,18 +16,14 @@ print()
 
 string_of_numbers = "0123456789"
 shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers)))
-global a 
-global account_balance
 
 
 account_balance = 0
 a = 0
 
 while True:
-
-    if a == 0:
     
-        def open_company_account():
+    def open_company_account():
             global new_bank_account 
             new_bank_account = input("Upisite naziv firme: ")
             print()
@@ -35,9 +31,12 @@ while True:
             new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
             global name_and_IBAN
             name_and_IBAN = print(new_bank_account_IBAN)
-            global a 
+            #global a 
             a = a + 1
             return a
+    if a == 0:
+        open_company_account()
+        
     else:
         print(f"""Vec imate napravljen bankovni racun:{name_and_IBAN}""")
 

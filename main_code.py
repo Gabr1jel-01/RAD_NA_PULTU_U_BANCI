@@ -52,17 +52,27 @@ def open_company_account():
     global name_and_IBAN
     global new_bank_account_IBAN
     global a
-            
-    if a == 0:
+    global b
+    b = 0 
+    if b == 0:
         new_bank_account = input("Upisite naziv firme: ")
         print()
              
         new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
             
-        name_and_IBAN = print(new_bank_account_IBAN)
+        name_and_IBAN = print(new_bank_account_IBAN)        
+        if a == 0:
+            global b
+            #new_bank_account = input("Upisite naziv firme: ")
+            #print()
              
-        a = a + 1
-        return a
+            #new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
+            
+            #name_and_IBAN = print(new_bank_account_IBAN)
+             
+            a = a + 1
+            b = b + 1
+            return a, b 
         
     else:
         print(f"Vec imate napravljen bankovni racun: {name_and_IBAN}")

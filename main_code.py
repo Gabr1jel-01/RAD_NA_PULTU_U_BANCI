@@ -62,7 +62,7 @@ def open_company_account():
         name_and_IBAN = print(new_bank_account_IBAN)
              
         a = a + 1
-        return a, name_and_IBAN
+        return a
         
     else:
         print(f"Vec imate napravljen bankovni racun: {name_and_IBAN}")

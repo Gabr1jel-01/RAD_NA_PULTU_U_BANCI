@@ -10,6 +10,8 @@ Funkcionalnosti:
 '''
 import random
 
+
+
 print()
 print("Dobrodosli!")
 print()

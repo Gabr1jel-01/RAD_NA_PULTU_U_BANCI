@@ -25,7 +25,7 @@ a = 0
 
 # declared functions
 def show_bank_account_balance():
-    account_balance = 0
+    global account_balance
     account_balance = 0 + money_pay_down() - money_pay_up()
     return account_balance
 
@@ -33,17 +33,23 @@ def show_account_spendings():
     pass
 
 def money_pay_down():
+    global account_balance
     money_depositing = int(input("Koliko novaca zelite uplatiti? "))
+    print()
     account_balance = account_balance + money_depositing
     return account_balance
 
 def money_pay_up():
     global account_balance
+    print(f'Preostalo sredstava na racunu: {account_balance}')
     if account_balance == 0:
         print("Nedovoljno sredstava na racunu!")
+        print()
     elif account_balance > 0:
         money_from_account = int(input("Koliko novaca zelite podici? "))
         account_balance = account_balance - money_from_account
+        print(f'Preostalo sredstava na racunu: {account_balance}')
+        print()
         return account_balance
 
 def exit():
@@ -66,43 +72,37 @@ def open_company_account():
         a = a + 1
         return a 
     
-    
     elif a == 1:
         os.system("cls")
         print()
         print(f'Vec imate napravljen racun: \n\n{new_bank_account_IBAN}\n')
         print("Vracamo vas na izbornik:")
         print()
-            
-    #else:
-        #print(f"Vec imate napravljen bankovni racun: {name_and_IBAN}")
-    #print()
     
 def user_input():
-    print(""" \t\t  2. Otvaranje racuna tvrtke\n
-                  3. Prikaz stanja racuna\n
-                  4. Prikaz prometa po racunu\n
-                  5. Polog novca na racun\n
-                  6. Podizanje novca sa racuna\n
-                  7.Izlaz iz programa\n""")
+    print(""" \t\t  1. Otvaranje racuna tvrtke\n
+                  2. Prikaz stanja racuna\n
+                  3. Prikaz prometa po racunu\n
+                  4. Polog novca na racun\n
+                  5. Podizanje novca sa racuna\n
+                  6.Izlaz iz programa\n""")
 
     choice = int(input("Odaberite radnju iz glavnog izbornika: "))
     os.system("cls")
     print("2. Otvaranje racuna tvrtke ")
     print()
     
-    
-    if choice == 2:
+    if choice == 1:
             open_company_account()
-    elif choice == 3:
+    elif choice == 2:
             show_bank_account_balance()
-    elif choice == 4:
+    elif choice == 3:
             show_account_spendings()
-    elif choice == 5:
+    elif choice == 4:
             money_pay_down()
-    elif choice == 6:
+    elif choice == 5:
             money_pay_up()
-    elif choice == 7:
+    elif choice == 6:
             exit()
 
 # main while loop

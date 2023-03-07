@@ -9,8 +9,9 @@ Funkcionalnosti:
 7.Izlaz iz programa (program se nakon svake akcije vrati na pocetni izbornik u kojem postoji opcija Izlaz)
 '''
 import random
+import os
 
-
+os.system("cls")
 
 print()
 print("Dobrodosli!")
@@ -25,7 +26,7 @@ a = 0
 # declared functions
 def show_bank_account_balance():
     account_balance = 0
-    account_balance = 0 - money_pay_up() + money_pay_down()
+    account_balance = 0 + money_pay_down() - money_pay_up()
     return account_balance
 
 def show_account_spendings():
@@ -40,7 +41,7 @@ def money_pay_up():
     global account_balance
     if account_balance == 0:
         print("Nedovoljno sredstava na racunu!")
-    elif account_balance >= 0:
+    elif account_balance > 0:
         money_from_account = int(input("Koliko novaca zelite podici? "))
         account_balance = account_balance - money_from_account
         return account_balance
@@ -54,34 +55,31 @@ def open_company_account():
     global name_and_IBAN
     global new_bank_account_IBAN
     global a
-    global b
-    b = 0 
-    if b == 0:
+                
+    if a == 0:
+        global b
         new_bank_account = input("Upisite naziv firme: ")
-        print()
-             
+        print()     
         new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
+        print(new_bank_account_IBAN)
+        print()    
+        a = a + 1
+        return a 
+    
+    
+    elif a == 1:
+        os.system("cls")
+        print()
+        print(f'Vec imate napravljen racun: \n\n{new_bank_account_IBAN}\n')
+        print("Vracamo vas na izbornik:")
+        print()
             
-        name_and_IBAN = print(new_bank_account_IBAN)        
-        if a == 0:
-            global b
-            #new_bank_account = input("Upisite naziv firme: ")
-            #print()
-             
-            #new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
-            
-            #name_and_IBAN = print(new_bank_account_IBAN)
-             
-            a = a + 1
-            b = b + 1
-            return a, b 
-        
-    else:
-        print(f"Vec imate napravljen bankovni racun: {name_and_IBAN}")
-    print()
+    #else:
+        #print(f"Vec imate napravljen bankovni racun: {name_and_IBAN}")
+    #print()
     
 def user_input():
-    print(""" \t\t2. Otvaranje racuna tvrtke\n
+    print(""" \t\t  2. Otvaranje racuna tvrtke\n
                   3. Prikaz stanja racuna\n
                   4. Prikaz prometa po racunu\n
                   5. Polog novca na racun\n
@@ -89,7 +87,10 @@ def user_input():
                   7.Izlaz iz programa\n""")
 
     choice = int(input("Odaberite radnju iz glavnog izbornika: "))
+    os.system("cls")
+    print("2. Otvaranje racuna tvrtke ")
     print()
+    
     
     if choice == 2:
             open_company_account()

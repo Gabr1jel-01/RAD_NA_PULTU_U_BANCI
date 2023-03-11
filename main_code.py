@@ -10,6 +10,7 @@ Funkcionalnosti:
 '''
 import random
 import os
+import sys
 
 os.system("cls")
 
@@ -22,6 +23,7 @@ string_of_numbers = "0123456789"
 shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers)))
 account_balance = 0
 a = 0
+list_of_spendings = []
 
 # declared functions
 def show_bank_account_balance():
@@ -29,6 +31,8 @@ def show_bank_account_balance():
     print(f'Na racunu imate raspolozivo {account_balance} sredstava.')
 
 def show_account_spendings():
+    global list_of_spendings
+    print(list_of_spendings)
     pass
 
 def money_pay_down():
@@ -36,7 +40,7 @@ def money_pay_down():
     money_depositing = int(input("Koliko novaca zelite uplatiti? "))
     print()
     account_balance = account_balance + money_depositing
-    return account_balance
+    return account_balance, list_of_spendings.append('+' + str(money_depositing))
 
 def money_pay_up():
     global account_balance
@@ -49,10 +53,11 @@ def money_pay_up():
         account_balance = account_balance - money_from_account
         print(f'Preostalo sredstava na racunu: {account_balance}')
         print()
-        return account_balance
+        return account_balance, list_of_spendings.append('-' + str(money_from_account))
 
 def exit():
-    return False
+    os.system("cls")
+    sys.exit()
 
 def open_company_account():
 

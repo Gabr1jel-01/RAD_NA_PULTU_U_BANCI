@@ -28,8 +28,10 @@ list_of_spendings = []
 # declared functions
 def show_bank_account_balance():
     global account_balance
+    print()
     print(f'Na racunu imate raspolozivo {account_balance} sredstava.')
-
+    print()
+    
 def show_account_spendings():
     global list_of_spendings
     print(list_of_spendings)

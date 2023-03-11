@@ -26,8 +26,7 @@ a = 0
 # declared functions
 def show_bank_account_balance():
     global account_balance
-    account_balance = 0 + money_pay_down() - money_pay_up()
-    return account_balance
+    print(f'Na racunu imate raspolozivo {account_balance} sredstava.')
 
 def show_account_spendings():
     pass

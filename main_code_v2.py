@@ -69,7 +69,7 @@ def open_company_account(new_bank_account:str,new_bank_account_IBAN:str,counter_
         new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
         print(new_bank_account_IBAN)
         print()    
-        counter_a = counter_a + 1
+        counter_a =+ 1
         return counter_a 
     
     elif counter_a == 1:

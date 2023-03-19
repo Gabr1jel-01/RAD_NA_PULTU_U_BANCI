@@ -62,7 +62,7 @@ def exit():
     sys.exit()
 
 def open_company_account(new_bank_account:str,new_bank_account_IBAN:str,counter_a:int):
-                
+    
     if counter_a == 0:
         new_bank_account = input("Upisite naziv firme: ")
         print()     

@@ -23,7 +23,6 @@ string_of_numbers = "0123456789"
 shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers)))
 account_balance = 0
 counter_a = 0
-counter_b = 0
 list_of_spendings = []
 new_bank_account = ''
 new_bank_account_IBAN = ''

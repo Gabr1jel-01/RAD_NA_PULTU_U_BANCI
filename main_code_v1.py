@@ -34,7 +34,7 @@ def show_bank_account_balance():
     
 def show_account_spendings():
     global list_of_spendings
-    print(list_of_spendings)
+    print(list_of_spendings) 
     pass
 
 def money_pay_down():

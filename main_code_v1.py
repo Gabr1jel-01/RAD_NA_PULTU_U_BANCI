@@ -15,7 +15,10 @@ import sys
 os.system("cls")
 
 print()
-print("Dobrodosli!")
+print("\t" + "*" * 60)
+print("\t\t\t    PyBank by Algebra")
+print()
+print()
 print()
 
 # declared variables 
@@ -24,20 +27,27 @@ shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers))
 account_balance = 0
 a = 0
 list_of_spendings = []
+#account_information = " "
 
 # declared functions
 def show_bank_account_balance():
+    """Ova funkcija pokazuje stanje racuna"""
+    
     global account_balance
     print()
     print(f'Na racunu imate raspolozivo {account_balance} sredstava.')
     print()
     
 def show_account_spendings():
+    """Ova funkcija prikazuje transakcije sa racuna"""
+    
     global list_of_spendings
     print(list_of_spendings) 
     pass
 
 def money_pay_down():
+    """Ova funkcija sluzi za uplatu novca na racun"""
+    
     global account_balance
     money_depositing = int(input("Koliko novaca zelite uplatiti? "))
     print()
@@ -45,6 +55,8 @@ def money_pay_down():
     return account_balance, list_of_spendings.append('+' + str(money_depositing))
 
 def money_pay_up():
+    """Ova funckija sluzi za podizanje sredstava sa racuna"""
+    
     global account_balance
     print(f'Preostalo sredstava na racunu: {account_balance}')
     if account_balance == 0:
@@ -58,48 +70,68 @@ def money_pay_up():
         return account_balance, list_of_spendings.append('-' + str(money_from_account))
 
 def exit():
+    """Kada se pozove ova funkcija, prekida se aplikacija"""
+    
     os.system("cls")
     sys.exit()
 
 def open_company_account():
-
-    global new_bank_account
-    global name_and_IBAN
-    global new_bank_account_IBAN
+    """Ovdje uzimam podatke od usera za otvaranje bankovnog racuna"""
+    
     global a
-                
-    if a == 0:
-        global b
-        new_bank_account = input("Upisite naziv firme: ")
-        print()     
-        new_bank_account_IBAN = f"Naziv firme: {new_bank_account}\n" + "IBAN: HR" + shuffle_string
-        print(new_bank_account_IBAN)
-        print()    
-        a = a + 1
-        return a 
+    global shuffle_string
+    global account_information
     
-    elif a == 1:
-        os.system("cls")
-        print()
-        print(f'Vec imate napravljen racun: \n\n{new_bank_account_IBAN}\n')
-        print("Vracamo vas na izbornik:")
-        print()
-    
-def user_input():
-    print(""" \t\t  1. Otvaranje racuna tvrtke\n
-                  2. Prikaz stanja racuna\n
-                  3. Prikaz prometa po racunu\n
-                  4. Polog novca na racun\n
-                  5. Podizanje novca sa racuna\n
-                  6.Izlaz iz programa\n""")
-
-    choice = int(input("Odaberite radnju iz glavnog izbornika: "))
     os.system("cls")
-    print("2. Otvaranje racuna tvrtke ")
+    print("\t" + "-" * 50)
+    print("\t\t     OTVARANJE RACUNA TVRTKE")
+    print("\t" + "-" * 50)
+    print()
+    print()
+    company_name = input("Naziv:\t\t\t\t")
+    company_street_and_number = input("Adresa:\t\t\t\t")
+    company_OIB = input("OIB:\t\t\t\t")
+    company_owner = input("Vlasnik:\t\t\t")
+    company_status = input("Status:\t\t\t\t")
+    company_capital = input("Temeljni kapital:\t\t")
+    company_IBAN_generated = ("IBAN:  BA" + f"{shuffle_string}")
+    print()
+    print("Uspjesno ste popunili podatke !")
+    print("Dodijeljen Vam je IBAN ! ")
+    print()
+    print(company_IBAN_generated)
+    print()
+    print()
+    a += 1
+    account_information ="Naziv:\t" + company_name + "\n" + "Adresa:\t" + company_street_and_number + "\n" + "OIB:\t" + company_OIB + "\n" + "Vlasnik:\t" + company_owner + "\n" + "Status:\t" + company_status + "\n" + "Temeljni kapital:\t" + company_capital
+    return account_information
+   
+def already_opened():
+    global account_information
+    os.system("cls")
+    print()
+    print(f'Vec imate napravljen racun !') 
+    print(account_information)    
+    print("Vracamo vas na izbornik:")        
+    print()
     print()
     
+def user_input():
+    print("""1. OTVARANJE RACUNA TVRTKE\n
+2. PRIKAZ STANJA RACUNA\n
+3. PRIKAZ PROMETA PO RACUNU\n
+4. POLOG NOVCA NA RACUN\n
+5. PODIZANJE NOVCA SA RACUNA\n
+6.IZLAZ IZ APLIKACIJE\n""")
+
+    choice = int(input("Odaberite radnju iz glavnog izbornika: "))
+
+    print()
     if choice == 1:
-            open_company_account()
+            if a == 0:
+                open_company_account()
+            else:
+                already_opened()
     elif choice == 2:
             show_bank_account_balance()
     elif choice == 3:
@@ -110,6 +142,7 @@ def user_input():
             money_pay_up()
     elif choice == 6:
             exit()
+
 
 # main while loop
 while True:

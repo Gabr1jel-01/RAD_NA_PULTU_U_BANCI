@@ -35,8 +35,15 @@ def show_bank_account_balance():
     """Ova funkcija pokazuje stanje racuna"""
     
     os.system("cls")
+    print("\t" + "-" * 50)
+    print("\t\t     PRIKAZ SREDSTAVA")
+    print("\t" + "-" * 50)
+    print()
+    print()
     
     global account_balance
+    print()
+    print()
     print()
     print(f'Na racunu imate raspolozivo {account_balance} sredstava.')
     print()
@@ -45,19 +52,36 @@ def show_account_spendings():
     """Ova funkcija prikazuje transakcije sa racuna"""
     
     os.system("cls")
+    print("\t" + "-" * 50)
+    print("\t\t         TRANSAKCIJE")
+    print("\t" + "-" * 50)
+    print()
+    print()
     
     global list_of_spendings
     if len(list_of_spendings) == 0:
+        print()
+        print()
         print("Jos niste napravili nikakvu transakciju!")
         print()
+        print()
     else:
+        print()
+        print()
         print(list_of_spendings) 
+        print()
         print()
 
 def money_pay_down():
     """Ova funkcija sluzi za uplatu novca na racun"""
     
     os.system("cls")
+    print("\t" + "-" * 50)
+    print("\t\t     UPLATA NOVCA NA RACUN")
+    print("\t" + "-" * 50)
+    print()
+    print()
+    
     global currency_check
     global account_balance
     currency_check = input("Zelite li uplatiti u kunama ili euru? Ukoliko zelite u kunama upisite HRK, a ukoliko zelite u euru napisite EUR\n").lower()
@@ -71,17 +95,24 @@ def money_pay_down():
         pass
         
     print()
+    print()
     account_balance = account_balance + money_depositing
     return account_balance, list_of_spendings.append('Uplata: ' + str(money_depositing) + " " + f"{currency_check.upper()}")
+    
 
 def money_pay_up():
     """Ova funckija sluzi za podizanje sredstava sa racuna"""
     
     os.system("cls")
+    print("\t" + "-" * 50)
+    print("\t\t     PODIZANJE SREDSTAVA SA RACUNA")
+    print("\t" + "-" * 50)
+    print()
+    print()
     
     global account_balance
     print(f'Preostalo sredstava na racunu: {account_balance}')
-    if account_balance == 0:
+    if account_balance == 0 or account_balance < 0:
         print("Nedovoljno sredstava na racunu!")
         print()
     elif account_balance > 0:
@@ -89,7 +120,7 @@ def money_pay_up():
         account_balance = account_balance - money_from_account
         print(f'Preostalo sredstava na racunu: {account_balance}')
         print()
-        return account_balance, list_of_spendings.append('-' + str(money_from_account))
+        return account_balance, list_of_spendings.append('Podizanje: ' + str(money_from_account))
 
 def exit():
     """Kada se pozove ova funkcija, prekida se aplikacija"""
@@ -145,6 +176,11 @@ def open_company_account():
 def already_opened():
     global account_information
     os.system("cls")
+    print("\t" + "-" * 50)
+    print("\t\t     OTVARANJE RACUNA TVRTKE")
+    print("\t" + "-" * 50)
+    print()
+    print()
     print()
     print(f'Vec imate napravljen racun !') 
     print(account_information)  
@@ -154,6 +190,9 @@ def already_opened():
     print()
     
 def user_input():
+    print()
+    print()
+    print()
     print("""1. OTVARANJE RACUNA TVRTKE\n
 2. PRIKAZ STANJA RACUNA\n
 3. PRIKAZ PROMETA PO RACUNU\n

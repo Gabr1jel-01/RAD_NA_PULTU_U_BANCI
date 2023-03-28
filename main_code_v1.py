@@ -41,11 +41,12 @@ def show_bank_account_balance():
     print()
     print()
     
+    global currency_check
     global account_balance
     print()
     print()
     print()
-    print(f'Na racunu imate raspolozivo {account_balance} sredstava.')
+    print(f'Na racunu imate raspolozivo {account_balance} {currency_check}.')
     print()
     
 def show_account_spendings():
@@ -94,12 +95,12 @@ def money_pay_down():
     else:
         pass
         
+    print(f"Uplatili ste novac u valuti {currency_check.upper()} te ce sve sljedece uplate biti uplacene u valuti {currency_check.upper()}. Hvala! ")
     print()
     print()
     account_balance = account_balance + money_depositing
     return account_balance, list_of_spendings.append('Uplata: ' + str(money_depositing) + " " + f"{currency_check.upper()}")
     
-
 def money_pay_up():
     """Ova funckija sluzi za podizanje sredstava sa racuna"""
     
@@ -110,15 +111,18 @@ def money_pay_up():
     print()
     print()
     
+    global currency_check
     global account_balance
-    print(f'Preostalo sredstava na racunu: {account_balance}')
+    
+    
+    print(f'Preostalo sredstava na racunu: {account_balance} {currency_check.upper()}')
     if account_balance == 0 or account_balance < 0:
         print("Nedovoljno sredstava na racunu!")
         print()
     elif account_balance > 0:
         money_from_account = int(input("Koliko novaca zelite podici? "))
         account_balance = account_balance - money_from_account
-        print(f'Preostalo sredstava na racunu: {account_balance}')
+        print(f'Preostalo sredstava na racunu: {account_balance} {currency_check.upper()}')
         print()
         return account_balance, list_of_spendings.append('Podizanje: ' + str(money_from_account))
 
@@ -224,6 +228,5 @@ def user_input():
 while True:
     user_input()
 
-    
     
     

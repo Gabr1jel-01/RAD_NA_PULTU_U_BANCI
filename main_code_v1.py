@@ -27,11 +27,14 @@ shuffle_string = "".join(random.sample(string_of_numbers,len(string_of_numbers))
 account_balance = 0
 a = 0
 list_of_spendings = []
+currency_check = ""
 #account_information = " "
 
 # declared functions
 def show_bank_account_balance():
     """Ova funkcija pokazuje stanje racuna"""
+    
+    os.system("cls")
     
     global account_balance
     print()
@@ -41,21 +44,40 @@ def show_bank_account_balance():
 def show_account_spendings():
     """Ova funkcija prikazuje transakcije sa racuna"""
     
+    os.system("cls")
+    
     global list_of_spendings
-    print(list_of_spendings) 
-    pass
+    if len(list_of_spendings) == 0:
+        print("Jos niste napravili nikakvu transakciju!")
+        print()
+    else:
+        print(list_of_spendings) 
+        print()
 
 def money_pay_down():
     """Ova funkcija sluzi za uplatu novca na racun"""
     
+    os.system("cls")
+    global currency_check
     global account_balance
-    money_depositing = int(input("Koliko novaca zelite uplatiti? "))
+    currency_check = input("Zelite li uplatiti u kunama ili euru? Ukoliko zelite u kunama upisite HRK, a ukoliko zelite u euru napisite EUR\n").lower()
+    if currency_check == "hrk":
+        money_depositing = int(input("Koliko novaca zelite uplatiti?\n"))
+    else:
+        pass
+    if currency_check == "eur":
+        money_depositing = int(input("Koliko novaca zelite uplatiti?\n"))
+    else:
+        pass
+        
     print()
     account_balance = account_balance + money_depositing
-    return account_balance, list_of_spendings.append('+' + str(money_depositing))
+    return account_balance, list_of_spendings.append('Uplata: ' + str(money_depositing) + " " + f"{currency_check.upper()}")
 
 def money_pay_up():
     """Ova funckija sluzi za podizanje sredstava sa racuna"""
+    
+    os.system("cls")
     
     global account_balance
     print(f'Preostalo sredstava na racunu: {account_balance}')
@@ -91,9 +113,23 @@ def open_company_account():
     company_name = input("Naziv:\t\t\t\t")
     company_street_and_number = input("Adresa:\t\t\t\t")
     company_OIB = input("OIB:\t\t\t\t")
+    
+    while company_OIB.isnumeric() != True or len(company_OIB) != 11:
+        print()
+        print("OIB mora sadrzavati 11 brojeva ne ukljucujuci znakove! Pokusajte ponovno: ")
+        company_OIB = input("OIB:\t\t\t\t")
+            
     company_owner = input("Vlasnik:\t\t\t")
     company_status = input("Status:\t\t\t\t")
     company_capital = input("Temeljni kapital:\t\t")
+    
+    while company_capital.isnumeric() != True:
+        print()
+        print("Unos kapitala moze sadrzavati samo brojeve bez razmaka ili ostalih znakova! Pokusajte ponovno! ")
+        company_capital = input("Temeljni kapital:\t\t")
+    
+    
+    
     company_IBAN_generated = ("IBAN:  BA" + f"{shuffle_string}")
     print()
     print("Uspjesno ste popunili podatke !")
@@ -103,7 +139,7 @@ def open_company_account():
     print()
     print()
     a += 1
-    account_information ="Naziv:\t" + company_name + "\n" + "Adresa:\t" + company_street_and_number + "\n" + "OIB:\t" + company_OIB + "\n" + "Vlasnik:\t" + company_owner + "\n" + "Status:\t" + company_status + "\n" + "Temeljni kapital:\t" + company_capital
+    account_information ="Naziv:\t" + company_name + "\n" + "Adresa:\t" + company_street_and_number + "\n" + "OIB:\t" + company_OIB + "\n"  + "Vlasnik:\t" + company_owner + "\n" + "Status:\t" + company_status + "\n" + "Temeljni kapital:\t" + company_capital
     return account_information
    
 def already_opened():
@@ -111,8 +147,9 @@ def already_opened():
     os.system("cls")
     print()
     print(f'Vec imate napravljen racun !') 
-    print(account_information)    
-    print("Vracamo vas na izbornik:")        
+    print(account_information)  
+    print()  
+    print("Vracamo vas na izbornik...")        
     print()
     print()
     

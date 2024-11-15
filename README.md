@@ -49,8 +49,9 @@ Nakon pokretanja aplikacije, u terminalu će se prikazati glavni izbornik koji s
   - Vlasnik (ovdje se unosi ime i prezime vlasnika tvrtke)
   - Status (ovdje se unosi status)
   - Temeljni kapital (ovdje se unosi temeljni kapital za otvaranje tvrtke)
-    > [!NOTE]
-    > Nakon što je korisnik uspješno otvorio račun automatski mu je dodijeljen IBAN koji mu je isto tako i prikazan u terminalu te se kapital za otvaranje tvrtke ne dodjeljuje kao sredstvo na računu!
+
+> [!NOTE]
+> Nakon što je korisnik uspješno otvorio račun automatski mu je dodijeljen IBAN koji mu je isto tako i prikazan u terminalu te se kapital za otvaranje tvrtke ne dodjeljuje kao sredstvo na računu!
 
 - Prikaz stanja računa:
 

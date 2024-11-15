@@ -4,22 +4,22 @@
 
 - [Cilj]()
 - [Funkcionalnosti](#objašnjenje-funkcionalnosti)
-  1. [Izbornik](#izbornik)
-  2. [Otvaranje računa tvrtke](#objašnjenje-funkcionalnosti)
-     1. Naziv
-     2. Adresa
-     3. OIB
-     4. Ime vlasnika
-     5. Status
-     6. Početni kapital
-  3. [Prikaz stanja računa]()
-  4. [Prikaz prometa po računu]()
-     1. Uplate
-     2. Isplate
-  5. [Polog novca na račun]()
-     1. Mogućnost uplate u dvije valute
-  6. [Podizanje novca sa računa]()
-  7. [Izlaz iz programa]()
+  - [Izbornik](#izbornik)
+  - [Otvaranje računa tvrtke](#objašnjenje-funkcionalnosti)
+    - Naziv
+    - Adresa
+    - OIB
+    - Ime vlasnika
+    - Status
+    - Početni kapital
+  - [Prikaz stanja računa]()
+  - [Prikaz prometa po računu]()
+    - Uplate
+    - Isplate
+  - [Polog novca na račun]()
+    - Mogućnost uplate u dvije valute
+  - [Podizanje novca sa računa]()
+  - [Izlaz iz programa]()
 
 ## Cilj
 
@@ -43,14 +43,14 @@ Nakon pokretanja aplikacije, u terminalu će se prikazati glavni izbornik koji s
 
 - Otvaranje računa tvrtke:
 
-  1.  Naziv (ovdje se unosi puni naziv tvrtke)
-  2.  Adresa (ovdje se unosi puna adresa tvrtke)
-  3.  OIB (ovdje se unosi OIB tvrtke te mora sadržavati 11 znamenaka inače će korisnik biti upozoren na nevažeči OIB te će ga se opet pitati da unese OIB)
-  4.  Vlasnik (ovdje se unosi ime i prezime vlasnika tvrtke)
-  5.  Status (ovdje se unosi status)
-  6.  Temeljni kapital (ovdje se unosi temeljni kapital za otvaranje tvrtke)
-      > [!NOTE]
-      > Nakon što je korisnik uspješno otvorio račun automatski mu je dodijeljen IBAN koji mu je isto tako i prikazan u terminalu te se kapital za otvaranje tvrtke ne dodjeljuje kao sredstvo na računu!
+  - Naziv (ovdje se unosi puni naziv tvrtke)
+  - Adresa (ovdje se unosi puna adresa tvrtke)
+  - OIB (ovdje se unosi OIB tvrtke te mora sadržavati 11 znamenaka inače će korisnik biti upozoren na nevažeči OIB te će ga se opet pitati da unese OIB)
+  - Vlasnik (ovdje se unosi ime i prezime vlasnika tvrtke)
+  - Status (ovdje se unosi status)
+  - Temeljni kapital (ovdje se unosi temeljni kapital za otvaranje tvrtke)
+    > [!NOTE]
+    > Nakon što je korisnik uspješno otvorio račun automatski mu je dodijeljen IBAN koji mu je isto tako i prikazan u terminalu te se kapital za otvaranje tvrtke ne dodjeljuje kao sredstvo na računu!
 
 - Prikaz stanja računa:
 

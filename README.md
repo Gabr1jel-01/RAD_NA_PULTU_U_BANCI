@@ -12,14 +12,14 @@
     - Ime vlasnika
     - Status
     - Početni kapital
-  - [Prikaz stanja računa]()
-  - [Prikaz prometa po računu]()
+  - [Prikaz stanja računa](#prikaz-stanja-racuna)
+  - [Prikaz prometa po računu](#prikaz-prometa-racuna)
     - Uplate
     - Isplate
-  - [Polog novca na račun]()
+  - [Polog novca na račun](#polog-novca)
     - Mogućnost uplate u dvije valute
-  - [Podizanje novca sa računa]()
-  - [Izlaz iz programa]()
+  - [Podizanje novca sa računa](#podizanje-novca)
+  - [Izlaz iz aplikacije](#izlaz-iz-aplikacije)
 
 ## Cilj
 
@@ -53,24 +53,24 @@ Nakon pokretanja aplikacije, u terminalu će se prikazati glavni izbornik koji s
 > [!NOTE]
 > Nakon što je korisnik uspješno otvorio račun automatski mu je dodijeljen IBAN koji mu je isto tako i prikazan u terminalu te se kapital za otvaranje tvrtke ne dodjeljuje kao sredstvo na računu!
 
-- Prikaz stanja računa:
+- <p id="prikaz-stanja-racuna">Prikaz stanja računa:</p>
 
   - Ukoliko prije nije položen nikakav iznos, korisnika program vraća na glavni izbornik
   - Ukoliko je korisnik prije uplatio novac na račun prikazuje mu se iznos u odgovarajućoj valuti uplate
 
-* Prikaz prometa po računu:
+* <p id="prikaz-prometa-racuna">Prikaz prometa po računu:</p>
 
   - Ukoliko prije nije položen ili podignut nikakav novac sa računa korisnika program vraća na glavni izbornik
   - Svaka uplata i isplata se prikazuje odabirom ove funkcije
 
-* Polog novca na račun
+* <p id="polog-novca">Polog novca na račun:</p>
 
   - Prilikom svake uplate na račun program će korisnika pitati u kojoj valuti želi uplatiti novac te koji iznos
 
-* Podizanje novca sa računa
+* <p id="podizanje-novca">Podizanje novca sa računa:</p>
 
   - Korisniku će biti prikazan iznos novca na računu te će mu biti ponuđena opcija podizanja novca
   - Nakon podizanja novca korisniku će biti prikazan preostali iznos na računu
 
-* Izlaz iz aplikacije
+* <p id="izlaz-iz-aplikacije">Izlaz iz aplikacije:</p>
   - Ova funkcija gasi program
